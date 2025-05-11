@@ -1,17 +1,19 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import viteLogo from './assets/images/Symbol.svg'
 import './App.css'
 import CenterLayout from './assets/layouts/CenterLayout'
 import PortalLayout from './assets/layouts/PortalLayout'
 import { Route, Routes } from 'react-router-dom'
-import Events from './assets/pages/Events'
-import SignUp from './assets/pages/SignUp'
-import LogIn from './assets/pages/LogIn'
 import Bookings from './assets/pages/Bookings'
-import Dashboard from './assets/pages/Dashboard'
 import EventDetails from './assets/pages/EventDetails'
+import Dashboard from './assets/pages/Dashboard'
+import SignIn from './assets/pages/SignIn'
+import SignUp from './assets/pages/SignUp'
+import Events from './assets/pages/Events'
+
+
 
 function App() {
 
@@ -22,7 +24,7 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/events/:id" element={<EventDetails />} />
         <Route path="/bookings" element={<Bookings />}/>
-        <Route path="/login" element={<LogIn />}/>
+        <Route path="/signin" element={<SignIn />}/>
         <Route path="/signup" element={<SignUp />}/>
     </Routes>
   )
