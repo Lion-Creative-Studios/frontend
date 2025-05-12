@@ -1,32 +1,35 @@
-import React, { useState } from 'react'
-import EventCard from '../components/EventCard'
+import React, { useState, useEffect } from 'react';
+import EventCard from '../components/EventCard';
+
+{/* File updated by chatgpt 4o to properly render the events */}
 
 const Events = () => {
-    const [events, SetEvents] = useState([])
+  const [events, setEvents] = useState([]);
 
-    const getEvents = async () => {
-        const res = await fetch("https://localhost:7283/api/events")
-
-        if (res.ok) {
-            const data = await res.json()
-            SetEvents(data)
-        }
+  const getEvents = async () => {
+    const res = await fetch("https://localhost:7283/api/events");
+    if (res.ok) {
+      const data = await res.json();
+      setEvents(data);
     }
+  };
 
-    useEffect(() => {
-        getEvents()
-    }, [])
+  useEffect(() => {
+    getEvents();
+  }, []);
 
-    return (
-        <div>
-            <h2>Events</h2>
-            {
-                events.map(event => (
-                    <EventCard key={event.id} event={event} />
-                ))
-            }
-        </div>
-    )
-}
+  return (
+    <div id="events">
+      <h2>Events</h2>
+      <div className="event-list">
+        {events.map(event => (
+          <EventCard key={event.id} event={event} />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default Events
+{/* File updated by chatgpt 4o to properly render the events */}
+
+export default Events;
