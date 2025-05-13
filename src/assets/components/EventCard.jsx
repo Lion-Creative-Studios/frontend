@@ -9,16 +9,17 @@ const EventCard = ({ event }) => {
       <div className="card-header">
         <div className="image-wrapper">
           <img
-            src={event.Image ?? "/placeholder.svg"}
+            src={event.image ?? "/placeholder.svg"}
             alt="event img"
-            className={event.Image ? "" : "placeholder-img"}
+            className={event.image ? "" : "placeholder-img"}
           />
           <div className="image-overlay">
             <span className="badge category">
-              {event.Category || "No category"}
+              {event.category || "No category"}
             </span>
-            <span className={`badge status ${!event.Status ? "missing" : ""}`}>
-              {event.Status || "No status"}
+            <span className={`badge status ${!event.status ? "missing" : ""}`}>
+              <span className="dot"></span> {/* The dot inside the status container */}
+              {event.status || "No status"}
             </span>
           </div>
         </div>
@@ -28,25 +29,25 @@ const EventCard = ({ event }) => {
           <button
             type="button"
             data-type="dropdown"
-            data-target={`#event-dropdown-${event.Id}`}
+            data-target={`#event-dropdown-${event.id}`}
             className="btn-action"
           >
             <i className="fa-solid fa-ellipsis"></i>
           </button>
 
-          <div id={`event-dropdown-${event.Id}`} className="dropdown">
+          <div id={`event-dropdown-${event.id}`} className="dropdown">
             <div className="dropdown-body">
               <nav className="dropdown-actions">
                 <button
                   data-type="modal"
                   data-target="#add-event-modal"
-                  data-id={event.Id}
-                  data-name={event.Name}
-                  data-category={event.Category}
-                  data-status={event.Status}
-                  data-date={event.Date}
-                  data-location={event.Location}
-                  data-price={event.Price}
+                  data-id={event.id}
+                  data-name={event.name}
+                  data-category={event.category}
+                  data-status={event.status}
+                  data-date={event.date}
+                  data-location={event.location}
+                  data-price={event.price}
                   className="dropdown-action"
                 >
                   <i className="fa-solid fa-pen-to-square"></i>
@@ -60,13 +61,13 @@ const EventCard = ({ event }) => {
                 <button
                   data-type="modal"
                   data-target="#edit-event-modal"
-                  data-id={event.Id}
-                  data-name={event.Name}
-                  data-category={event.Category}
-                  data-status={event.Status}
-                  data-date={event.Date}
-                  data-location={event.Location}
-                  data-price={event.Price}
+                  data-id={event.id}
+                  data-name={event.name}
+                  data-category={event.category}
+                  data-status={event.status}
+                  data-date={event.date}
+                  data-location={event.location}
+                  data-price={event.price}
                   className="dropdown-action"
                 >
                   <i className="fa-solid fa-plus"></i>
@@ -80,8 +81,8 @@ const EventCard = ({ event }) => {
                 <button
                   data-type="modal"
                   data-target="#delete-event-modal"
-                  data-id={event.Id}
-                  data-name={event.Name}
+                  data-id={event.id}
+                  data-name={event.name}
                   className="dropdown-action"
                 >
                   <i className="fa-solid fa-trash"></i>
@@ -95,11 +96,11 @@ const EventCard = ({ event }) => {
 
       {/* BODY: Date, title, location */}
       <div className="card-body">
-        <p className="event-date-time">{event.Date ?? "No date"}</p>
-        <h4 className="event-title">{event.Name ?? "Untitled Event"}</h4>
+        <p className="event-date-time">{event.date ?? "No date"}</p>
+        <h4 className="event-title">{event.name ?? "Untitled Event"}</h4>
         <p className="event-location">
           <i className="fa-solid fa-location-dot"></i>
-          {event.Location || "No location"}
+          {event.location || "No location"}
         </p>
       </div>
 
@@ -109,10 +110,10 @@ const EventCard = ({ event }) => {
           <div className="progress-bar">
             <div className="progress" style={{ width: "65%" }}></div>
           </div>
-          <span className="progress-label">65%</span>
+          <span className="progress-label"><img src="/chart.svg" alt="chart"></img>65%</span>
         </div>
         <div className="event-price">
-          {event.Price ? `$${event.Price}` : "No price"}
+          {event.price ? `$${event.price}` : "No price"}
         </div>
       </div>
     </div>
