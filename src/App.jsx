@@ -13,22 +13,45 @@ import SignIn from './assets/pages/SignIn'
 import SignUp from './assets/pages/SignUp'
 import Events from './assets/pages/Events'
 
-
+{/* Routes updated by generated code chatgpt 4o, to use Layout correctly */}
 
 function App() {
 
 
   return (
     <Routes>
-        <Route path="/" element={<Dashboard />}/>
+
+      <Route element={<PortalLayout />}>
+        <Route path="/" element={<Dashboard />} />
+      </Route>
+
+      <Route element={<PortalLayout />}>
         <Route path="/events" element={<Events />} />
+      </Route>
+
+      {/* 👇 Use CenterLayout for event details page */}
+      <Route element={<PortalLayout />}>
         <Route path="/events/:id" element={<EventDetails />} />
-        <Route path="/bookings" element={<Bookings />}/>
-        <Route path="/signin" element={<SignIn />}/>
-        <Route path="/signup" element={<SignUp />}/>
+      </Route>
+
+      <Route element={<PortalLayout />}>
+        <Route path="/bookings" element={<Bookings />} />
+      </Route>
+
+      <Route element={<CenterLayout />}>
+        <Route path="/signin" element={<SignIn />} />
+      </Route>
+
+      <Route element={<CenterLayout />}>
+        <Route path="/signup" element={<SignUp />} />
+      </Route>
+
+
     </Routes>
   )
 }
+
+{/* Routes updated by generated code chatgpt 4o, to use Layout correctly */}
 
 export default App
 
