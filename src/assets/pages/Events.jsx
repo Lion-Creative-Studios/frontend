@@ -20,7 +20,7 @@ const Events = () => {
 
   return (
     <div id="events">
-      <h2>Events</h2>
+      <h2 className="events-header-h2">Events</h2>
       <div className="event-list">
         {events.map(event => (
           <EventCard key={event.id} event={event} />
