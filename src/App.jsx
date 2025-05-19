@@ -7,7 +7,7 @@ import CenterLayout from './assets/layouts/CenterLayout'
 import PortalLayout from './assets/layouts/PortalLayout'
 import { Route, Routes } from 'react-router-dom'
 import Bookings from './assets/pages/Bookings'
-import BookEvent from './assets/pages/BookEvent'
+import BookEventPage from './assets/pages/BookEventPage'
 import EventDetails from './assets/pages/EventDetails'
 import Dashboard from './assets/pages/Dashboard'
 import SignIn from './assets/pages/SignIn'
@@ -40,7 +40,7 @@ function App() {
       </Route>
 
       <Route element={<PortalLayout />}>
-        <Route path="/events/bookings/:id" element={<BookEvent />} />
+        <Route path="/events/bookings/:id" element={<BookEventPage />} />
       </Route>
 
       <Route element={<CenterLayout />}>
