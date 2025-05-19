@@ -14,8 +14,8 @@ const EventCard = ({ event }) => {
   return (
     <div className="event-card" data-event-id={event.Id} onClick={handleClick} style={{ cursor: "pointer" }}>
       {/* HEADER: Image with category/status badges */}
-      <div className="card-header">
-        <div className="image-wrapper">
+      <div className="card-header event-card-header">
+        <div className="image-wrapper event-card-image-wrapper">
           <img
             src={event.image ?? "/placeholder.svg"}
             alt="event img"
@@ -103,8 +103,20 @@ const EventCard = ({ event }) => {
       </div>
 
       {/* BODY: Date, title, location */}
-      <div className="card-body">
-        <p className="event-date-time">{event.date ?? "No date"}</p>
+      <div className="card-body event-card-body">
+        {/* <p className="event-date-time">{event.date ?? "No date"}</p> */}
+        <p className="event-date-time">
+          {event.date
+            ? new Date(event.date).toLocaleString("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+                hour: "numeric",
+                minute: "2-digit",
+                hour12: true,
+              })
+            : "No date"}
+        </p>
         <h4 className="event-title">{event.name ?? "Untitled Event"}</h4>
         <p className="event-location">
           <i className="fa-solid fa-location-dot"></i>
@@ -113,7 +125,7 @@ const EventCard = ({ event }) => {
       </div>
 
       {/* FOOTER: Progress and price */}
-      <div className="card-footer">
+      <div className="card-footer event-card-footer">
         <div className="event-progress">
           <div className="progress-bar">
             <div className="progress" style={{ width: "65%" }}></div>
