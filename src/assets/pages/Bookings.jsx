@@ -34,7 +34,7 @@ const Bookings = () => {
 
 
   return (
-    <div>Book Event - {id}</div>
+    <div>Book Event - {id} - ph </div>
   )
 }
 
