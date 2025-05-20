@@ -17,11 +17,11 @@ const Nav = () => {
 
       <nav className="nav-links">
         <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          <i class="fa-regular fa-grid-2"></i>
+          <i className="fa-regular fa-grid-2"></i>
           <span>Dashboard</span>
         </NavLink>
         <NavLink to="/events" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          <i class="fa-regular fa-ticket"></i>
+          <i className="fa-regular fa-ticket"></i>
           <span>Events</span>
         </NavLink>
       </nav>
