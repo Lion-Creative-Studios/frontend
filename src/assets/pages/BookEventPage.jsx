@@ -185,7 +185,7 @@ function BookEventPage() {
             </div>
           </div>
 
-          <button type="submit" className="btn-primary">
+          <button type="submit" className="btn-primary btn-booking-submit">
             Book Now
           </button>
         </form>

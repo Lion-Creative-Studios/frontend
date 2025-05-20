@@ -1450,15 +1450,30 @@ textarea,
   margin-bottom: 1rem;
 
   a {
-    background-color: var(--secondary-110);
-    padding: .8rem;
+    background-color: var(--secondary-100);
     border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 60px;
   }
 
   a:hover {
     opacity: .92;
     text-decoration: none;
   }
+}
+
+.btn-booking-submit {
+  background-color: var(--white-100) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border: none !important;
+  border: 1rem !important;
+  width: 150px;
+  height: 45px;
 }
 
 #events .event-card .event-progress {
