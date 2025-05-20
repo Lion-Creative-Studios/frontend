@@ -32,6 +32,7 @@
   --secondary-110: #1C2346;
   --secondary-100: #37437D;
   --secondary-100-50: rgba(55, 67, 112, 0.5);
+  --secondary-100-10: rgba(55, 67, 112, 0.1);
   --secondary-90: #5562A2;
   --secondary-70: #707DBF;
   --secondary-60: #707DBF;
@@ -262,14 +263,14 @@
   /* Links */
   --link-color: var(--primary-100);
   --link-hover-color: var(--primary-90);
-  --navlink-text-color: var(--text-color);
-  --navlink-text-hover-color: var(--blue);
-  --navlink-text-active-color: var(--blue);
+  --navlink-text-color: var(--secondary-100);
+  --navlink-text-hover-color: var(--primary-90);
+  --navlink-text-active-color: var(--primary-100);
   --navlink-background-color: transparent;
-  --navlink-background-hover-color: var(--secondary-100-50);
+  --navlink-background-hover-color: var(--secondary-100-10);
   --navlink-background-active-color: var(--secondary-100-50);
   --navlink-background-color: transparent;
-  --navlink-background-hover-color: var(--secondary-100-50);
+  --navlink-background-hover-color: var(--secondary-100-10);
   --navlink-background-active-color: var(--secondary-100-50);
   --navlink-border-color: var(--transparent);
   --navlink-border-active-color: var(--secondary-100-50);
@@ -393,10 +394,12 @@ body {
 
 nav {
   grid-area: nav;
-  background-color: var(--nav-background-color);
+  background-color: var(--transparent);
   border-radius: 1rem;
   padding: 1.5rem;
 }
+
+
 
 header {
   grid-area: header;
@@ -411,6 +414,8 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
+  margin-left: -2rem;
+  margin-right: 1rem;
 
   .header-nav-section {
     position: relative;
@@ -550,11 +555,37 @@ header {
 #sidebar {
   width: 250px;
   margin-top: 1rem;
+  margin-left: 1rem;
   border-right: 1px solid var(--border-color);
   padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  height: 92.8dvh;
+  align-items: center;
+  background-color: #eeefff !important;
+  border: none;
+  border-radius: 1rem;
+  grid-area: nav;
+  margin-bottom: 1rem;
+
+  .logotype {
+    position: relative;
+    left: -1.25rem;
+  }
+
+   .siderbar-a-logo-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ventixe-name {
+    font-size: 1.5rem;
+    color: var(--secondary-100);
+  }
 }
 
 main {
@@ -562,6 +593,8 @@ main {
   background-color: var(--main-background-color);
   border-radius: 1rem;
   padding: 1.5rem;
+  margin-left: -2rem;
+  margin-right: 1rem;
 }
 
 /* Footer updated by chatgpt 4o generated code */
@@ -575,6 +608,8 @@ footer {
   align-items: center;
   /* <-- this helps center everything vertically */
   height: 50px;
+  margin-left: -2rem;
+  margin-right: 1rem;
 
   nav {
     background-color: transparent;
@@ -734,10 +769,12 @@ a:hover {
 .nav-links {
   display: grid;
   gap: 0.8rem;
+  position: relative;
+  left: -1.25rem;
 }
 
 .nav-links .nav-link {
-  background-color: var(--navlink-background-color);
+  background-color: var(--);
   color: var(--navlink-text-color);
   border: 1px solid var(--navlink-border-color);
   text-decoration: none;
@@ -751,20 +788,29 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 1.2rem;
+
+  .fa-ticket,
+  .fa-grid-2 {
+    font-size: 1.5rem;
+  }
 }
 
 .nav-links .nav-link:hover {
   background-color: var(--navlink-background-hover-color);
   color: var(--navlink-text-hover-color);
-  border-color: var(--navlink-border-hover-color);
+  border-color: var(--transparent);
   text-decoration: none;
 }
 
 .nav-links .nav-link.active {
-  background-color: var(--navlink-background-active-color);
+  background-color: var(--transparent);
   color: var(--navlink-text-active-color);
-  border-color: var(--navlink-border-active-color);
+  border-color: var(--transparent);
   text-decoration: none;
+
+  span {
+    text-decoration: underline;
+  }
 }
 
 /* Modals */

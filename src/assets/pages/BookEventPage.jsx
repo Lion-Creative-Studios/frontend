@@ -15,12 +15,13 @@ function BookEventPage() {
     streetName: "",
     postalCode: "",
     city: "",
+    ticketQuantity: 1,
   });
 
   const postBooking = async () => {
     try {
       const res = await fetch(
-        `https://bookingservice-dxbphqh2cegwf7gq.swedencentral-01.azurewebsites.net/api/bookings`,
+        `https://bookingservicenew-e7cqgagcf4cwb7e9.swedencentral-01.azurewebsites.net/api/Bookings`,
         {
           method: "POST",
           headers: {
@@ -131,6 +132,21 @@ function BookEventPage() {
               type="text"
               name="streetName"
               value={formData.streetName}
+              onChange={handleChange}
+              className="form-input"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="ticketQuantity" className="form-label">
+              Ticket Quantity
+            </label>
+            <input
+              id="ticketQuantity"
+              type="number"
+              name="ticketQuantity"
+              value={formData.ticketQuantity}
               onChange={handleChange}
               className="form-input"
               required

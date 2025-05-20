@@ -7,20 +7,22 @@ const Nav = () => {
   return (
     <aside id="sidebar">
       <section className="logotype">
-        <a href="/">
-          <img src="/images/logotype/alpha-logotype-icon.svg" alt="Alpha logotype" />
-          <span>alpha</span>
-        </a>
+          <a href="/">
+            <div className='siderbar-a-logo-wrapper'>
+              <img src="logotype-icon.svg" alt="Alpha logotype" />
+              <p className='ventixe-name'>Ventixe</p>
+            </div>
+          </a>
       </section>
 
       <nav className="nav-links">
-        <NavLink to="/dashboard" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          <i className="fa-duotone fa-briefcase"></i>
-          <span>Projects</span>
+        <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+          <i class="fa-regular fa-grid-2"></i>
+          <span>Dashboard</span>
         </NavLink>
         <NavLink to="/events" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          <i className="fa-duotone fa-handshake"></i>
-          <span>Clients</span>
+          <i class="fa-regular fa-ticket"></i>
+          <span>Events</span>
         </NavLink>
       </nav>
     </aside>
